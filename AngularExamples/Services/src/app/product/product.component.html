@@ -1,0 +1,20 @@
+<div>
+  <ul>
+    <li *ngFor="let product of products">{{product.Name}}</li>
+  </ul>
+</div>
+<button (click)=addProduct()>Add this product!</button>
+
+<h1> Add Country </h1>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value, f)">
+  <div>
+    <label for="Name">Name</label>
+    <input type="text" name="Name" ngModel>
+  </div>
+  <div>
+    <label for="Code">Code</label>
+    <input type="text" name="Code" ngModel>
+  </div>
+  <input type="submit">
+</form>
