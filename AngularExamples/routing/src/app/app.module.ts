@@ -21,10 +21,11 @@ const ChildRoutes = [
   ]
 
 const Routes = [
-  {path: "home", component: HomeComponent, children: ChildRoutes},
-  {path: "protected", component: ProtectedComponent, canActivate: [LoggedInGuard]},
+  {path: '', redirectTo: '/home', pathMatch: 'full'},
+  {path: "home", component: HomeComponent, children: ChildRoutes}, // childRoutes - definisemo da nasa home componenta ima decu
+  {path: "protected", component: ProtectedComponent, canActivate: [LoggedInGuard]}, // ProtectedCommponent, canActivate - prosledjujemo klasu koja se ponasa kao service
   {path: "about/:Id", component: AboutComponent},
-  {path: "other", redirectTo:"home"},
+  {path: "other", redirectTo:"home"}, // redirekcija
 ]
 
 
@@ -41,7 +42,9 @@ const Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    RouterModule.forRoot(Routes)
+    RouterModule.forRoot(Routes) // za definisane rute na liniji 23, definisemo RouterModule - konfigurisemo rutiranje
+    // potrebno je specificirati i na kojem mestu se vrsi rutiranje (neki meni ili nesto slicno sto ce konstantno postojati)
+    // app.component.html
   ],
   providers: [AuthService, LoggedInGuard],//!LoggedInGuard also has to be included in providers!
   bootstrap: [AppComponent]

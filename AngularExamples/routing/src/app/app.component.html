@@ -7,10 +7,12 @@
     <button (click)="logOut()">Log Out!</button>
   </div>
   <ol>
+    <!-- routerLink atribut sam generise # ili #! zavisi od angular konfiguracije -->
     <li><a [routerLink]="['/home']">Home</a></li>
     <li><a [routerLink]="['/about/1']">About</a></li>
     <li><a [routerLink]="['/other']">Other</a></li>
   </ol>
 
+  <!-- Odavde pocinje rutiranje, ovde ce da uglavljuje druge komponente -->
   <router-outlet></router-outlet>
 </h1>

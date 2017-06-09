@@ -18,6 +18,7 @@ export class AboutComponent implements OnInit {
   ngOnInit() {
   }
 
+  // metoda koja na dugme vraca na home rutu  
   goHome(){
     this.router.navigate(['/home']);
   }
